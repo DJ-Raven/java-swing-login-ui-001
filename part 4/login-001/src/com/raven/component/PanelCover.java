@@ -8,11 +8,15 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 import javax.swing.JLabel;
 import net.miginfocom.swing.MigLayout;
 
 public class PanelCover extends javax.swing.JPanel {
 
+    private final DecimalFormat df = new DecimalFormat("##0.###", DecimalFormatSymbols.getInstance(Locale.US));
     private ActionListener event;
     private MigLayout layout;
     private JLabel title;
@@ -84,7 +88,7 @@ public class PanelCover extends javax.swing.JPanel {
     }
 
     public void registerLeft(double v) {
-        v = Double.valueOf(String.format("%.3f", v));
+        v = Double.valueOf(df.format(v));
         login(false);
         layout.setComponentConstraints(title, "pad 0 -" + v + "% 0 0");
         layout.setComponentConstraints(description, "pad 0 -" + v + "% 0 0");
@@ -92,7 +96,7 @@ public class PanelCover extends javax.swing.JPanel {
     }
 
     public void registerRight(double v) {
-        v = Double.valueOf(String.format("%.3f", v));
+        v = Double.valueOf(df.format(v));
         login(false);
         layout.setComponentConstraints(title, "pad 0 -" + v + "% 0 0");
         layout.setComponentConstraints(description, "pad 0 -" + v + "% 0 0");
@@ -100,7 +104,7 @@ public class PanelCover extends javax.swing.JPanel {
     }
 
     public void loginLeft(double v) {
-        v = Double.valueOf(String.format("%.3f", v));
+        v = Double.valueOf(df.format(v));
         login(true);
         layout.setComponentConstraints(title, "pad 0 " + v + "% 0 " + v + "%");
         layout.setComponentConstraints(description, "pad 0 " + v + "% 0 " + v + "%");
@@ -108,7 +112,7 @@ public class PanelCover extends javax.swing.JPanel {
     }
 
     public void loginRight(double v) {
-        v = Double.valueOf(String.format("%.3f", v));
+        v = Double.valueOf(df.format(v));
         login(true);
         layout.setComponentConstraints(title, "pad 0 " + v + "% 0 " + v + "%");
         layout.setComponentConstraints(description, "pad 0 " + v + "% 0 " + v + "%");
