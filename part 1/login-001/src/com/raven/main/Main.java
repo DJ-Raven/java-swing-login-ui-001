@@ -4,7 +4,6 @@ import com.raven.component.PanelCover;
 import com.raven.component.PanelLoginAndRegister;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.DecimalFormat;
 import net.miginfocom.swing.MigLayout;
 import org.jdesktop.animation.timing.Animator;
 import org.jdesktop.animation.timing.TimingTarget;
@@ -19,7 +18,6 @@ public class Main extends javax.swing.JFrame {
     private final double addSize = 30;
     private final double coverSize = 40;
     private final double loginSize = 60;
-    private final DecimalFormat df = new DecimalFormat("##0.###");
 
     public Main() {
         initComponents();
@@ -61,8 +59,8 @@ public class Main extends javax.swing.JFrame {
                 if (fraction >= 0.5f) {
                     loginAndRegister.showRegister(isLogin);
                 }
-                fractionCover = Double.valueOf(df.format(fractionCover));
-                fractionLogin = Double.valueOf(df.format(fractionLogin));
+                fractionCover = Double.valueOf(String.format("%.3f", fractionCover));
+                fractionLogin = Double.valueOf(String.format("%.3f", fractionLogin));
                 layout.setComponentConstraints(cover, "width " + size + "%, pos " + fractionCover + "al 0 n 100%");
                 layout.setComponentConstraints(loginAndRegister, "width " + loginSize + "%, pos " + fractionLogin + "al 0 n 100%");
                 bg.revalidate();
