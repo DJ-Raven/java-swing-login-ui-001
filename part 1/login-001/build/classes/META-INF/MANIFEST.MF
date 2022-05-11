@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.10.8
+Created-By: 15.0.1+9-18 (Oracle Corporation)
+Class-Path: lib/TimingFramework-0.55.jar lib/miglayout-4.0.jar
+X-COMMENT: Main-Class will be added automatically by build
+Main-Class: com.raven.main.Main
+

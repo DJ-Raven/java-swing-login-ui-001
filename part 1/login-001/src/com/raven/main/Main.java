@@ -15,7 +15,7 @@ public class Main extends javax.swing.JFrame {
     private MigLayout layout;
     private PanelCover cover;
     private PanelLoginAndRegister loginAndRegister;
-    private boolean isLogin;
+    private boolean isLogin = true;
     private final double addSize = 30;
     private final double coverSize = 40;
     private final double loginSize = 60;
@@ -78,8 +78,10 @@ public class Main extends javax.swing.JFrame {
         animator.setDeceleration(0.5f);
         animator.setResolution(0);  //  for smooth animation
         bg.setLayout(layout);
-        bg.add(cover, "width " + coverSize + "%, pos 0al 0 n 100%");
-        bg.add(loginAndRegister, "width " + loginSize + "%, pos 1al 0 n 100%"); //  1al as 100%
+        bg.add(cover, "width " + coverSize + "%, pos " + (isLogin ? "1al" : "0al") + " 0 n 100%");
+        bg.add(loginAndRegister, "width " + loginSize + "%, pos " + (isLogin ? "0al" : "1al") + " 0 n 100%"); //  1al as 100%
+        loginAndRegister.showRegister(!isLogin);
+        cover.login(isLogin);
         cover.addEvent(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {

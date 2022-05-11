@@ -89,7 +89,7 @@ public class PanelLoginAndRegister extends javax.swing.JLayeredPane {
         cmd.setBackground(new Color(7, 164, 121));
         cmd.setForeground(new Color(250, 250, 250));
         cmd.setText("SIGN IN");
-        login.add(cmd, "w 40%, h 40");
+        login.add(cmd, "w 40%, h 40%");
     }
 
     public void showRegister(boolean show) {
