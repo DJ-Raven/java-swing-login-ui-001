@@ -5,6 +5,8 @@ import com.raven.component.PanelLoginAndRegister;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 import net.miginfocom.swing.MigLayout;
 import org.jdesktop.animation.timing.Animator;
 import org.jdesktop.animation.timing.TimingTarget;
@@ -12,6 +14,7 @@ import org.jdesktop.animation.timing.TimingTargetAdapter;
 
 public class Main extends javax.swing.JFrame {
 
+    private final DecimalFormat df = new DecimalFormat("##0.###", DecimalFormatSymbols.getInstance(Locale.US));
     private MigLayout layout;
     private PanelCover cover;
     private PanelLoginAndRegister loginAndRegister;
@@ -19,7 +22,6 @@ public class Main extends javax.swing.JFrame {
     private final double addSize = 30;
     private final double coverSize = 40;
     private final double loginSize = 60;
-    private final DecimalFormat df = new DecimalFormat("##0.###");
 
     public Main() {
         initComponents();

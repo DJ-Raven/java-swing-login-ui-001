@@ -9,12 +9,14 @@ import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 import javax.swing.JLabel;
 import net.miginfocom.swing.MigLayout;
 
 public class PanelCover extends javax.swing.JPanel {
 
-    private final DecimalFormat df = new DecimalFormat("##0.###");
+    private final DecimalFormat df = new DecimalFormat("##0.###", DecimalFormatSymbols.getInstance(Locale.US));
     private ActionListener event;
     private MigLayout layout;
     private JLabel title;
