@@ -23,7 +23,7 @@ public class PanelCover extends javax.swing.JPanel {
     private JLabel description;
     private JLabel description1;
     private ButtonOutLine button;
-    private boolean isLogin;
+    private boolean isLogin = true;
 
     public PanelCover() {
         initComponents();
@@ -35,20 +35,20 @@ public class PanelCover extends javax.swing.JPanel {
     }
 
     private void init() {
-        title = new JLabel("Welcome Back!");
+        title = new JLabel("hello, Friend!");
         title.setFont(new Font("sansserif", 1, 30));
         title.setForeground(new Color(245, 245, 245));
         add(title);
-        description = new JLabel("To keep connected with us please");
+        description = new JLabel("Enter your personal details");
         description.setForeground(new Color(245, 245, 245));
         add(description);
-        description1 = new JLabel("login with your personal info");
+        description1 = new JLabel("and start journey with us");
         description1.setForeground(new Color(245, 245, 245));
         add(description1);
         button = new ButtonOutLine();
         button.setBackground(new Color(255, 255, 255));
         button.setForeground(new Color(255, 255, 255));
-        button.setText("SIGN IN");
+        button.setText("SIGN UP");
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
